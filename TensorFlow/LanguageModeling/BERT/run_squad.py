@@ -40,6 +40,7 @@ from utils.utils import LogEvalRunHook, LogTrainRunHook, setup_xla_flags
 from utils.gpu_affinity import set_affinity
 import utils.dllogger_class
 from dllogger import Verbosity
+import pdb
 
 flags = tf.flags
 FLAGS = None
@@ -1154,6 +1155,9 @@ def main(_):
     all_results = []
     eval_hooks = [LogEvalRunHook(FLAGS.predict_batch_size)]
     eval_start_time = time.time()
+
+    ############ inference starts here ####################
+    pdb.set_trace()
     for result in estimator.predict(
         predict_input_fn, yield_single_examples=True, hooks=eval_hooks):
       if len(all_results) % 1000 == 0:
