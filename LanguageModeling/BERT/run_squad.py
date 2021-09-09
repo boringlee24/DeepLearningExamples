@@ -1157,7 +1157,7 @@ def main(_):
     eval_start_time = time.time()
 
     ############ inference starts here ####################
-    pdb.set_trace()
+
     for result in estimator.predict(
         predict_input_fn, yield_single_examples=True, hooks=eval_hooks):
       if len(all_results) % 1000 == 0:

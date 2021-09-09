@@ -25,6 +25,7 @@ data/*/*.zip
 
 #Resutls
 results/
+**.pb
 
 # Distribution / packaging
 .Python

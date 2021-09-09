@@ -48,7 +48,7 @@ if [ "$task" = "squad" ] ; then
 
       for bs in 1 2 4 8; do
 
-      for use_fp16 in "--amp" "--noamp"; do
+      for use_fp16 in "--amp" "--noamp"; do #TODO: use_trt
 
         python run_squad.py \
         --vocab_file=$BERT_DIR/vocab.txt \
@@ -60,6 +60,7 @@ if [ "$task" = "squad" ] ; then
         --max_seq_length=$seq_len \
         --doc_stride=128 \
         --output_dir=${RESULTS_DIR} \
+	--use_trt=True \
         "$use_fp16" \
         --use_xla --num_eval_iterations=1024 |& tee $tmp_file
 
