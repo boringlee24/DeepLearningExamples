@@ -31,7 +31,9 @@ if [ "$task" = "squad" ] ; then
     echo "Squad directory set as " $SQUAD_DIR
 
     echo "Inference performance benchmarking for BERT $bert_model from $BERT_DIR" >> $LOGFILE
-    for bert_model in "base" "large"; do
+#    for bert_model in "base" "large"; do TODO
+    for bert_model in "large"; do
+
       echo "Model Sequence-Length Batch-size Precision Throughput-Average(sent/sec) Latency-Average(ms) Latency-50%(ms) Latency-90%(ms) Latency-95%(ms) Latency-99%(ms) Latency-100%(ms)" >> $LOGFILE
 
 
